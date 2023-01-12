@@ -1,9 +1,9 @@
-import './index.css'
-
-export default function App() {
+function App() {
   return (
     <div>
       React
     </div>
   )
 }
+
+export default App;
