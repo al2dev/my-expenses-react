@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import NewCost from './components/NewCost/NewCost'
-import ItemsBlock from './components/costs/ItemsBlock';
+import ItemsBlock from './components/Сosts/ItemsBlock';
 
   const INITIAL_COSTS = [
     {

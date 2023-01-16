@@ -56,7 +56,7 @@ const CostForm = (props) => {
           <input type="number" value={userInput.amount} onChange={costChangeHandler} placeholder="Стоимость в доллорах" min="0.01" step="0.01"/>
         </div>
         <div className="new-cost__control">
-          <label>Сумма</label>
+          <label>Дата покупки</label>
           <input type="date" value={userInput.date} onChange={dateChangeHandler} min="2016-01-01" placeholder="Дата покупки"/>
         </div>
         <div className="new-cost__actions">
