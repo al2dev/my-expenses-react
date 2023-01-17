@@ -7,18 +7,18 @@ const CostForm = (props) => {
   // const [amount, setAmount] = useState('');
   // const [date, setDate] = useState('');
 
-  const [userInput, setUserInput] = useState({name: '', amount: '', date: ''});
-  
+  const [userInput, setUserInput] = useState({ name: '', amount: '', date: '' });
+
   const nameChangeHandler = (event) => {
     // setName(event.target.value);
-    setUserInput({  
+    setUserInput({
       ...userInput,
       name: event.target.value
     });
   };
   const costChangeHandler = (event) => {
     // setAmount(event.target.value);
-    setUserInput({  
+    setUserInput({
       ...userInput,
       amount: event.target.value
     });
@@ -35,33 +35,33 @@ const CostForm = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    
+
     const costData = {
       description: userInput.name,
       amount: userInput.amount,
       date: new Date(userInput.date)
     };
     props.onSaveData(costData);
-    setUserInput({name: '', amount: '', date: ''});
+    setUserInput({ name: '', amount: '', date: '' });
   }
-  
+
   return (
     <form onSubmit={submitHandler}>
-        <div className="new-cost__control">
-          <label>Наименование</label>
-          <input type="text" value={userInput.name} onChange={nameChangeHandler} placeholder="Введите значение.." />
-        </div>
-        <div className="new-cost__control">
-          <label>Стоимость</label>
-          <input type="number" value={userInput.amount} onChange={costChangeHandler} placeholder="Стоимость в доллорах" min="0.01" step="0.01"/>
-        </div>
-        <div className="new-cost__control">
-          <label>Дата покупки</label>
-          <input type="date" value={userInput.date} onChange={dateChangeHandler} min="2016-01-01" placeholder="Дата покупки"/>
-        </div>
-        <div className="new-cost__actions">
-          <button className="new-cost__button" type="submit">Добавить расход</button>
-        </div>
+      <div className="new-cost__control">
+        <label>Наименование</label>
+        <input type="text" value={userInput.name} onChange={nameChangeHandler} placeholder="Введите значение.." maxlength="21" />
+      </div>
+      <div className="new-cost__control">
+        <label>Стоимость</label>
+        <input type="number" value={userInput.amount} onChange={costChangeHandler} placeholder="Стоимость в доллорах" min="0.01" max="10000000" step="0.01" />
+      </div>
+      <div className="new-cost__control">
+        <label>Дата покупки</label>
+        <input type="date" value={userInput.date} onChange={dateChangeHandler} min="2016-01-01" placeholder="Дата покупки" />
+      </div>
+      <div className="new-cost__actions">
+        <button className="new-cost__button" type="submit">Добавить расход</button>
+      </div>
     </form>
   )
 }
