@@ -7,7 +7,7 @@ import ItemsBlock from './components/Сosts/ItemsBlock';
       id: 1,
       date: new Date(2023, 1, 12),
       description: 'Кроссовки',
-      amount: '100.20'
+      amount: 100.20
     }
   ];
 

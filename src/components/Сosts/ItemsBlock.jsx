@@ -3,8 +3,9 @@ import CostsFilter from './CostsFilter';
 import CostsList from './CostsList';
 import Card from '../UI/Card'
 import './ItemsBlock.css';
+import CostDiagram from './CostDiagram';
 
-function ItemsBlock({data}) {
+function ItemsBlock({ data }) {
 
   const [selectedYear, setSelectedYear] = useState('2023');
   const filterCost = (actualYear) => {
@@ -14,10 +15,11 @@ function ItemsBlock({data}) {
   const filteredCosts = data.filter(x => x.date.getFullYear() == selectedYear);
 
   return (
-      <Card className="costs">
-        <CostsFilter year={selectedYear} onChangeYear={filterCost} />
-        <CostsList costs={filteredCosts} />
-      </Card>
+    <Card className="costs">
+      <CostsFilter year={selectedYear} onChangeYear={filterCost} />
+      <CostDiagram costs={filteredCosts} />
+      <CostsList costs={filteredCosts} />
+    </Card>
   )
 }
 
